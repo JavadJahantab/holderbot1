@@ -183,7 +183,7 @@ clear && echo -e "\n      Running the bot...      \n\n" && yes '-' | head -n 50 
 
 count=0
 while true; do
-    chmod +x monitoring.py holder.py expired.py limiteder2.py restart.sh
+    chmod +x monitoring.py holder.py expired.py limiteder2.py restart2.sh
     nohup python3 monitoring2.py & disown
     nohup python3 holder2.py & disown
     nohup python3 expired2.py & disown

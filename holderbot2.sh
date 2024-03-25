@@ -29,7 +29,7 @@ done
 
 clear && echo -e "\n      Checking hold venv...      \n\n" && yes '-' | head -n 50 | tr -d '\n\n' && echo
 
-mkdir -p holderbot1 && cd holderbot1 && git clone -b main https://github.com/javadjahantab/holderbot1.git .
+mkdir -p holderbot2 && cd holderbot2 && git clone -b main https://github.com/javadjahantab/holderbot2.git .
 python3 -m venv hold && source hold/bin/activate
 
 clear && echo -e "\n      Checking python library...      \n\n" && yes '-' | head -n 50 | tr -d '\n\n' && echo

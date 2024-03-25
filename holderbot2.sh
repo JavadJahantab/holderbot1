@@ -18,7 +18,7 @@ done
 
 clear && echo -e "\n      Checking processes...      \n\n" && yes '-' | head -n 50 | tr -d '\n\n' && echo
 
-processes=("python3 holder.py" "python3 holderbeta.py" "python3 node_status_checker.py" "python3 monitoringbeta.py" "python3 monitoring.py" "python3 expired.py" "python3 limiteder.py")
+processes=("python3 holder2.py" "python3 holderbeta.py" "python3 node_status_checker.py" "python3 monitoringbeta.py" "python3 monitoring.py" "python3 expired.py" "python3 limiteder.py")
 for proc in "${processes[@]}"; do
     if ps aux | grep -v grep | grep "$proc" &> /dev/null; then
         proc_name=$(echo "$proc" | cut -d ' ' -f 2)
@@ -183,7 +183,7 @@ clear && echo -e "\n      Running the bot...      \n\n" && yes '-' | head -n 50 
 
 count=0
 while true; do
-    chmod +x monitoring.py holder.py expired.py limiteder2.py restart2.sh
+    chmod +x monitoring2.py holder2.py expired2.py limiteder2.py restart2.sh
     nohup python3 monitoring2.py & disown
     nohup python3 holder2.py & disown
     nohup python3 expired2.py & disown

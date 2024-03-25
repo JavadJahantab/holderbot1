@@ -134,7 +134,7 @@ done
 clear && echo -e "\n      Creating database...      \n\n" && yes '-' | head -n 50 | tr -d '\n\n' && echo
 
 while true; do
-    sqlite3 holder.db <<EOF
+    sqlite3 holder2.db <<EOF
 CREATE TABLE IF NOT EXISTS bot
     (chatid INTEGER PRIMARY KEY,
      token TEXT);

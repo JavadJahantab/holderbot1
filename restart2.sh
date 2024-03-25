@@ -1,17 +1,17 @@
 #!/bin/bash
 HOME=/
-pkill -f monitoring.py 
-pkill -f holder.py 
-pkill -f expired.py 
-pkill -f limiteder.py 
+pkill -f monitoring2.py 
+pkill -f holder2.py 
+pkill -f expired2.py 
+pkill -f limiteder2.py 
 cd
 cd /holderbot2
 source hold/bin/activate
-chmod +x monitoring.py
-chmod +x holder.py
-chmod +x expired.py
-chmod +x limiteder.py
-nohup python3 monitoring.py & disown
-nohup python3 holder.py & disown
-nohup python3 expired.py & disown
-nohup python3 limiteder.py & disown
+chmod +x monitoring2.py
+chmod +x holder2.py
+chmod +x expired2.py
+chmod +x limiteder2.py
+nohup python3 monitoring2.py & disown
+nohup python3 holder2.py & disown
+nohup python3 expired2.py & disown
+nohup python3 limiteder2.py & disown

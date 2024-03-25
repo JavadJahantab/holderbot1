@@ -183,16 +183,16 @@ clear && echo -e "\n      Running the bot...      \n\n" && yes '-' | head -n 50 
 
 count=0
 while true; do
-    chmod +x monitoring.py holder.py expired.py limiteder.py restart.sh
-    nohup python3 monitoring.py & disown
-    nohup python3 holder.py & disown
-    nohup python3 expired.py & disown
-    nohup python3 limiteder.py & disown
+    chmod +x monitoring.py holder.py expired.py limiteder2.py restart.sh
+    nohup python3 monitoring2.py & disown
+    nohup python3 holder2.py & disown
+    nohup python3 expired2.py & disown
+    nohup python3 limiteder2.py & disown
     sleep 1
     echo -e "\n\nplease wait...\n\n"
     sleep 7
 
-    if ! pgrep -x "monitoring.py" && ! pgrep -x "holder.py" && ! pgrep -x "expired.py" && ! pgrep -x "limiteder.py"; then
+    if ! pgrep -x "monitoring2.py" && ! pgrep -x "holder2.py" && ! pgrep -x "expired2.py" && ! pgrep -x "limiteder2.py"; then
         echo "Scripts are running successfully."
         break
     else
@@ -205,8 +205,8 @@ while true; do
     fi
 done
 
-crontab -l | grep -vF "/bin/bash /holderbot/restart.sh" | crontab -
-cronjob="@reboot sleep 20 && /bin/bash /holderbot/restart.sh"
+crontab -l | grep -vF "/bin/bash /holderbot/restart2.sh" | crontab -
+cronjob="@reboot sleep 20 && /bin/bash /holderbot/restart2.sh"
 if ! crontab -l | grep -Fq "$cronjob" >/dev/null 2>&1; then
   (crontab -l 2>/dev/null; echo "$cronjob") | crontab -
 fi
